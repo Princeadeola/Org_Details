@@ -1,0 +1,520 @@
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~
+$ git --version
+git version 2.33.0.windows.2
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~
+$ git help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone             Clone a repository into a new directory
+   init              Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add               Add file contents to the index
+   mv                Move or rename a file, a directory, or a symlink
+   restore           Restore working tree files
+   rm                Remove files from the working tree and from the index
+   sparse-checkout   Initialize and modify the sparse-checkout
+
+examine the history and state (see also: git help revisions)
+   bisect            Use binary search to find the commit that introduced a bug
+   diff              Show changes between commits, commit and working tree, etc
+   grep              Print lines matching a pattern
+   log               Show commit logs
+   show              Show various types of objects
+   status            Show the working tree status
+
+grow, mark and tweak your common history
+   branch            List, create, or delete branches
+   commit            Record changes to the repository
+   merge             Join two or more development histories together
+   rebase            Reapply commits on top of another base tip
+   reset             Reset current HEAD to the specified state
+   switch            Switch branches
+   tag               Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch             Download objects and refs from another repository
+   pull              Fetch from and integrate with another repository or a local branch
+   push              Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~
+$ pwd
+/c/Users/Dextron
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~
+$ mkdir Git_Demo
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~
+$ cd Git_Demo/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ pwd
+/c/Users/Dextron/Git_Demo
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ mkdir FirstRepo
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ cd FirstRepo/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo
+$ git init
+Initialized empty Git repository in C:/Users/Dextron/Git_Demo/FirstRepo/.git/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ touch master.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ notepad master.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git status
+starting fsmonitor-daemon in 'C:/Users/Dextron/Git_Demo/FirstRepo'
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git add .
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   master.txt
+
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git commit -m "This is my first git commit"
+[master (root-commit) ed33093] This is my first git commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 master.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git log
+commit ed33093aca8f91efc4a4940bc6043ae884dd0019 (HEAD -> master)
+Author: A-Adeola <56828114+Princeadeola@users.noreply.github.com>
+Date:   Mon Oct 18 10:50:54 2021 -0700
+
+    This is my first git commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ touch master1.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ notepad master1.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ notepad master.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   master.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        master1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git add .
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   master.txt
+        new file:   master1.txt
+
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git commit -m "This is my second commit"
+[master e9bbb4d] This is my second commit
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+ create mode 100644 master1.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git log
+commit e9bbb4d43eea9c97dd82ca96dd26183f42e93c98 (HEAD -> master)
+Author: A-Adeola <56828114+Princeadeola@users.noreply.github.com>
+Date:   Mon Oct 18 11:08:07 2021 -0700
+
+    This is my second commit
+
+commit ed33093aca8f91efc4a4940bc6043ae884dd0019
+Author: A-Adeola <56828114+Princeadeola@users.noreply.github.com>
+Date:   Mon Oct 18 10:50:54 2021 -0700
+
+    This is my first git commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git remote add origin https://github.com/Princeadeola/FirstRepo.git
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git remote -v
+origin  https://github.com/Princeadeola/FirstRepo.git (fetch)
+origin  https://github.com/Princeadeola/FirstRepo.git (push)
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ git push -u origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (7/7), 636 bytes | 106.00 KiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Princeadeola/FirstRepo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ ssh-keygen -t rsa -C princeadeola234@gmail.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Dextron/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Dextron/.ssh/id_rsa
+Your public key has been saved in /c/Users/Dextron/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:EfZ+rdkndM/J+E1tNQaF4FDhTXbTC5c5wcWZ0arFjtQ princeadeola234@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|        o..+oooB%|
+|       . o+ +ooO=|
+|        . .o =o.o|
+|         o  ..E. |
+|        S ...=ooo|
+|           .o==o*|
+|            o.ooB|
+|              .=.|
+|               ..|
++----[SHA256]-----+
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ ssh-keygen -t rsa -C princeadeola234@gmail.com^C
+
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (RSA) to the list of known hosts.
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+Hi Princeadeola! You've successfully authenticated, but GitHub does not provide shell access.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ pwd
+/c/Users/Dextron/Git_Demo/FirstRepo
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ cd Git_Demo/
+bash: cd: Git_Demo/: No such file or directory
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/FirstRepo (master)
+$ cd ..
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ ls
+FirstRepo/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ git clone git@github.com:Princeadeola/SecondRepo.git
+Cloning into 'SecondRepo'...
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ ls
+FirstRepo/  SecondRepo/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ ls -ltr
+total 0
+drwxr-xr-x 1 Dextron 197609 0 Oct 18 11:01 FirstRepo/
+drwxr-xr-x 1 Dextron 197609 0 Oct 18 11:48 SecondRepo/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ cd SecondRepo
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ ls -ltr
+total 1
+-rw-r--r-- 1 Dextron 197609 87 Oct 18 11:48 README.md
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ notepad second.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ git status
+starting fsmonitor-daemon in 'C:/Users/Dextron/Git_Demo/SecondRepo'
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        second.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ git add .
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ git commit -m "This is my first commit for the second repo"
+[main afeaace] This is my first commit for the second repo
+ 1 file changed, 3 insertions(+)
+ create mode 100644 second.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ git remote -v
+origin  git@github.com:Princeadeola/SecondRepo.git (fetch)
+origin  git@github.com:Princeadeola/SecondRepo.git (push)
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ git push origin main
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 383 bytes | 95.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Princeadeola/SecondRepo.git
+   ac85803..afeaace  main -> main
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ git log --pretty=oneline
+afeaace5d4e075c76a5c1f530686e54d5261ef28 (HEAD -> main, origin/main, origin/HEAD) This is my first commit for the second repo
+ac85803dc374c248471761f0b0450843eb6572a9 Initial commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ mkdir Org_Details
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ rm -r Org_Details
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/SecondRepo (main)
+$ cd ..
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ mkdir Org_Details
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo
+$ cd Org_Details
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details
+$ notepad name.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details
+$ notapad employees.txt
+bash: notapad: command not found
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details
+$ notepad employees.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details
+$ git init
+Initialized empty Git repository in C:/Users/Dextron/Git_Demo/Org_Details/.git/
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git status
+starting fsmonitor-daemon in 'C:/Users/Dextron/Git_Demo/Org_Details'
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        employees.txt
+        name.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git add .
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git commit -m "First Commit"
+[master (root-commit) b27fdfd] First Commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 employees.txt
+ create mode 100644 name.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git log --pretty=oneline
+b27fdfdb97326e53cc6e0b0dcb2be8fe17f801c9 (HEAD -> master) First Commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git branch Blr_Branch
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git branch -v
+  Blr_Branch b27fdfd First Commit
+* master     b27fdfd First Commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git checkout Blr_Branch
+Switched to branch 'Blr_Branch'
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ ls
+employees.txt  name.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ notepad address.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git add .
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git commit -m "Blr branch commit"
+[Blr_Branch c699616] Blr branch commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 address.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git checkout master branch
+error: pathspec 'branch' did not match any file(s) known to git
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git checkout master
+Switched to branch 'master'
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git checkout Blr_Branch
+Switched to branch 'Blr_Branch'
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git remote add origin git@github.com:Princeadeola/Org_Details.git
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git checkout master
+Switched to branch 'master'
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git push -u origin master
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 340 bytes | 68.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Princeadeola/Org_Details.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git push -u origin Blr_Branch
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 353 bytes | 117.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'Blr_Branch' on GitHub by visiting:
+remote:      https://github.com/Princeadeola/Org_Details/pull/new/Blr_Branch
+remote:
+To github.com:Princeadeola/Org_Details.git
+ * [new branch]      Blr_Branch -> Blr_Branch
+Branch 'Blr_Branch' set up to track remote branch 'Blr_Branch' from 'origin'.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git checkout Blr_Branch
+Switched to branch 'Blr_Branch'
+Your branch is up to date with 'origin/Blr_Branch'.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (Blr_Branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git merge Blr_Branch
+Updating b27fdfd..c699616
+Fast-forward
+ address.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 address.txt
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git log --pretty=oneline
+c699616f3c09666c7d3febaa3f5b29b4ec5ada7c (HEAD -> master, origin/Blr_Branch, Blr_Branch) Blr branch commit
+b27fdfdb97326e53cc6e0b0dcb2be8fe17f801c9 (origin/master) First Commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git push origin master
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Princeadeola/Org_Details.git
+   b27fdfd..c699616  master -> master
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git branch -D Blr_Branch
+Deleted branch Blr_Branch (was c699616).
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git branch -v
+* master c699616 Blr branch commit
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$ git push origin --delete Blr_Branch
+Enter passphrase for key '/c/Users/Dextron/.ssh/id_rsa':
+To github.com:Princeadeola/Org_Details.git
+ - [deleted]         Blr_Branch
+
+Dextron@DESKTOP-NPCA9R3 MINGW64 ~/Git_Demo/Org_Details (master)
+$
